@@ -1,0 +1,6 @@
+requirement_id,label,category,credit_min,credit_max,eligible_courses,notes
+MAC_CORE,Complete all MAC core courses,core,18.0,,MAC-COMP-8110|MAC-COMP-8150|MAC-COMP-8220|MAC-COMP-8250|MAC-COMP-8340|MAC-COMP-8470,Core courses build foundational applied computing competencies.
+MAC_TECH_ELECTIVE,Choose at least two technical electives,technical-elective,6.0,12.0,MAC-COMP-8650|MAC-COMP-8720|MAC-COMP-8780|MAC-COMP-8830,Technical electives can also satisfy AI stream depth areas.
+MAC_BUSINESS,Complete two business/management courses,business,6.0,6.0,MAC-BU-7500|MAC-BU-7600|MAC-BU-7700,Students typically select from Odette School of Business offerings.
+MAC_PROJECT,Complete applied project or co-op placement,project,6.0,6.0,MAC-COMP-8890,Prerequisites must be satisfied before enrolling.
+MAC_GPA,Maintain minimum cumulative GPA of 3.0,minimum-gpa,,,,Advisors review academic progress each term.

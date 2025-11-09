@@ -1,0 +1,121 @@
+student_id,admit_term,program_stream,undergrad_major,gpa_entry,co_op_status,demographic_group,citizenship_status,interests,learning_style,work_experience_years
+STU-0001,2025W,MAC-General,Electrical Engineering,3.41,seeking,Group-D,domestic,data-analytics|entrepreneurship|machine-learning|project-management,project-based,1.3
+STU-0002,2025W,MAC-General,Computer Science,3.18,seeking,Group-B,international,cloud-computing|machine-learning|project-management|software-engineering,self-paced,4.0
+STU-0003,2025W,MAC-General,Electrical Engineering,2.96,not-applicable,Group-D,domestic,entrepreneurship|project-management,project-based,7.3
+STU-0004,2025F,MAC-AI,Software Engineering,3.34,seeking,Group-D,international,cloud-computing|data-analytics|human-centered-design|project-management,lecture,6.4
+STU-0005,2025F,MAC-AI,Data Science,3.19,placed,Group-B,international,cloud-computing|human-centered-design,self-paced,0.5
+STU-0006,2025W,MAC-General,Electrical Engineering,3.50,not-applicable,Group-C,international,cloud-computing|entrepreneurship,lecture,2.2
+STU-0007,2025W,MAC-AI,Electrical Engineering,2.76,placed,Group-D,international,cloud-computing|cybersecurity|machine-learning|project-management,self-paced,2.6
+STU-0008,2025W,MAC-General,Mathematics,3.05,not-applicable,Group-C,domestic,machine-learning|project-management,self-paced,6.5
+STU-0009,2024F,MAC-General,Electrical Engineering,2.96,seeking,Group-A,international,cloud-computing|entrepreneurship|human-centered-design|software-engineering,lecture,3.6
+STU-0010,2025W,MAC-General,Mathematics,3.13,not-applicable,Group-B,domestic,cybersecurity|human-centered-design,lecture,2.5
+STU-0011,2025F,MAC-AI,Software Engineering,2.86,seeking,Group-A,domestic,human-centered-design|project-management|software-engineering,self-paced,0.9
+STU-0012,2024F,MAC-General,Electrical Engineering,3.39,seeking,Group-D,international,cloud-computing|data-analytics|human-centered-design,self-paced,4.6
+STU-0013,2024F,MAC-General,Electrical Engineering,3.05,placed,Group-B,international,entrepreneurship|project-management|software-engineering,self-paced,3.7
+STU-0014,2025F,MAC-General,Computer Science,3.11,not-applicable,Group-D,international,machine-learning|project-management,lecture,1.4
+STU-0015,2025W,MAC-General,Software Engineering,3.34,placed,Group-C,international,data-analytics|project-management|software-engineering,project-based,0.8
+STU-0016,2025F,MAC-AI,Mathematics,3.37,placed,Group-C,domestic,cloud-computing|cybersecurity,project-based,4.8
+STU-0017,2025W,MAC-General,Electrical Engineering,2.76,seeking,Group-A,international,data-analytics|human-centered-design|machine-learning,lecture,6.6
+STU-0018,2025W,MAC-AI,Software Engineering,3.25,not-applicable,Group-C,international,cybersecurity|software-engineering,lecture,7.7
+STU-0019,2025F,MAC-General,Data Science,3.14,not-applicable,Group-B,domestic,cloud-computing|machine-learning,project-based,5.8
+STU-0020,2025W,MAC-General,Electrical Engineering,3.23,seeking,Group-B,international,cybersecurity|data-analytics|human-centered-design|machine-learning,lecture,5.6
+STU-0021,2025F,MAC-General,Electrical Engineering,3.08,seeking,Group-D,domestic,cloud-computing|software-engineering,project-based,5.2
+STU-0022,2025F,MAC-AI,Software Engineering,3.47,seeking,Group-C,domestic,entrepreneurship|software-engineering,lecture,6.8
+STU-0023,2024F,MAC-General,Mathematics,2.93,not-applicable,Group-D,international,cloud-computing|machine-learning,lecture,0.4
+STU-0024,2024F,MAC-General,Computer Science,3.28,seeking,Group-C,domestic,cloud-computing|project-management,project-based,4.0
+STU-0025,2024F,MAC-General,Information Technology,3.24,seeking,Group-D,international,cloud-computing|entrepreneurship|project-management,project-based,8.0
+STU-0026,2024F,MAC-General,Electrical Engineering,2.81,seeking,Group-B,domestic,cybersecurity|human-centered-design|software-engineering,project-based,4.8
+STU-0027,2024F,MAC-AI,Computer Science,3.18,not-applicable,Group-A,international,cybersecurity|human-centered-design|software-engineering,self-paced,1.8
+STU-0028,2024F,MAC-General,Mathematics,3.20,placed,Group-C,international,cybersecurity|human-centered-design|machine-learning|software-engineering,project-based,1.4
+STU-0029,2024F,MAC-General,Information Technology,3.37,placed,Group-C,international,cloud-computing|entrepreneurship|project-management,self-paced,3.6
+STU-0030,2025W,MAC-General,Computer Science,3.09,placed,Group-C,international,cybersecurity|human-centered-design,lecture,5.9
+STU-0031,2024F,MAC-General,Information Technology,3.22,seeking,Group-B,international,cloud-computing|machine-learning|project-management|software-engineering,self-paced,1.6
+STU-0032,2025W,MAC-General,Data Science,3.58,seeking,Group-D,domestic,cybersecurity|entrepreneurship|project-management|software-engineering,lecture,3.1
+STU-0033,2025F,MAC-General,Electrical Engineering,3.07,not-applicable,Group-B,international,cybersecurity|data-analytics|machine-learning,self-paced,0.6
+STU-0034,2025F,MAC-General,Software Engineering,3.06,seeking,Group-D,international,cybersecurity|machine-learning|software-engineering,lecture,4.6
+STU-0035,2025W,MAC-AI,Software Engineering,2.73,seeking,Group-D,international,data-analytics|entrepreneurship|software-engineering,project-based,1.7
+STU-0036,2025F,MAC-AI,Data Science,3.70,not-applicable,Group-C,international,cloud-computing|data-analytics,lecture,7.6
+STU-0037,2024F,MAC-General,Mathematics,3.29,not-applicable,Group-A,international,cloud-computing|human-centered-design|machine-learning|software-engineering,lecture,4.0
+STU-0038,2024F,MAC-General,Mathematics,3.55,seeking,Group-C,domestic,cybersecurity|data-analytics|entrepreneurship|project-management,self-paced,0.2
+STU-0039,2025F,MAC-General,Information Technology,3.34,not-applicable,Group-A,international,data-analytics|machine-learning,project-based,6.2
+STU-0040,2024F,MAC-General,Software Engineering,3.37,placed,Group-B,international,cloud-computing|entrepreneurship,self-paced,3.2
+STU-0041,2025F,MAC-General,Information Technology,3.20,placed,Group-D,domestic,human-centered-design|machine-learning,self-paced,7.2
+STU-0042,2025F,MAC-General,Software Engineering,3.03,not-applicable,Group-A,domestic,cloud-computing|software-engineering,lecture,0.9
+STU-0043,2025W,MAC-General,Computer Science,3.27,placed,Group-A,domestic,cloud-computing|software-engineering,lecture,6.0
+STU-0044,2025W,MAC-AI,Computer Science,2.85,not-applicable,Group-D,international,data-analytics|human-centered-design|machine-learning|project-management,project-based,1.0
+STU-0045,2024F,MAC-AI,Data Science,3.40,seeking,Group-D,domestic,data-analytics|entrepreneurship|software-engineering,lecture,7.1
+STU-0046,2024F,MAC-AI,Electrical Engineering,3.09,not-applicable,Group-B,international,entrepreneurship|machine-learning,self-paced,4.2
+STU-0047,2025W,MAC-AI,Computer Science,3.26,placed,Group-C,international,cloud-computing|cybersecurity|project-management,lecture,7.8
+STU-0048,2025W,MAC-General,Electrical Engineering,3.41,seeking,Group-B,international,cybersecurity|project-management,project-based,6.0
+STU-0049,2025F,MAC-AI,Software Engineering,2.97,seeking,Group-B,international,cybersecurity|data-analytics|entrepreneurship,self-paced,7.3
+STU-0050,2024F,MAC-General,Data Science,3.45,placed,Group-D,international,cybersecurity|human-centered-design|project-management,project-based,0.4
+STU-0051,2025W,MAC-AI,Mathematics,3.73,seeking,Group-D,international,data-analytics|machine-learning|software-engineering,lecture,1.1
+STU-0052,2025W,MAC-General,Data Science,3.48,not-applicable,Group-D,domestic,human-centered-design|machine-learning|software-engineering,lecture,6.7
+STU-0053,2025W,MAC-General,Computer Science,2.84,seeking,Group-C,international,cybersecurity|project-management,project-based,3.6
+STU-0054,2025F,MAC-General,Data Science,2.86,placed,Group-A,international,cybersecurity|human-centered-design,project-based,3.5
+STU-0055,2025F,MAC-General,Electrical Engineering,3.29,seeking,Group-C,domestic,cloud-computing|data-analytics,self-paced,4.6
+STU-0056,2024F,MAC-General,Data Science,3.02,placed,Group-A,international,entrepreneurship|machine-learning,lecture,4.9
+STU-0057,2025F,MAC-General,Mathematics,3.13,seeking,Group-A,international,cybersecurity|human-centered-design,self-paced,3.5
+STU-0058,2024F,MAC-General,Mathematics,3.12,placed,Group-A,domestic,cybersecurity|project-management,lecture,0.9
+STU-0059,2024F,MAC-AI,Software Engineering,3.18,placed,Group-A,international,entrepreneurship|human-centered-design|machine-learning|software-engineering,self-paced,1.5
+STU-0060,2025F,MAC-AI,Computer Science,3.75,placed,Group-B,international,cloud-computing|software-engineering,project-based,4.4
+STU-0061,2025F,MAC-AI,Computer Science,3.36,not-applicable,Group-D,international,cloud-computing|cybersecurity|software-engineering,lecture,6.4
+STU-0062,2025F,MAC-AI,Mathematics,3.33,not-applicable,Group-B,domestic,cloud-computing|entrepreneurship|machine-learning|software-engineering,lecture,6.0
+STU-0063,2025W,MAC-General,Mathematics,3.43,not-applicable,Group-C,international,cloud-computing|entrepreneurship|project-management,project-based,2.4
+STU-0064,2024F,MAC-General,Computer Science,3.31,placed,Group-D,international,data-analytics|entrepreneurship|machine-learning|project-management,project-based,6.0
+STU-0065,2025F,MAC-General,Information Technology,3.06,seeking,Group-A,international,cybersecurity|data-analytics|project-management,project-based,2.9
+STU-0066,2025W,MAC-AI,Mathematics,3.29,placed,Group-D,domestic,cloud-computing|cybersecurity,self-paced,1.6
+STU-0067,2024F,MAC-AI,Mathematics,3.23,not-applicable,Group-B,international,cloud-computing|cybersecurity|data-analytics|software-engineering,lecture,2.7
+STU-0068,2024F,MAC-AI,Mathematics,3.52,not-applicable,Group-B,international,machine-learning|project-management|software-engineering,lecture,3.2
+STU-0069,2024F,MAC-AI,Mathematics,2.94,seeking,Group-D,international,cybersecurity|human-centered-design|project-management|software-engineering,project-based,0.3
+STU-0070,2025W,MAC-General,Electrical Engineering,3.34,not-applicable,Group-A,international,cloud-computing|entrepreneurship|human-centered-design,self-paced,6.9
+STU-0071,2025W,MAC-General,Software Engineering,3.23,placed,Group-B,international,cloud-computing|data-analytics,self-paced,7.3
+STU-0072,2025W,MAC-General,Data Science,3.13,seeking,Group-A,international,entrepreneurship|human-centered-design|software-engineering,project-based,3.2
+STU-0073,2025F,MAC-General,Electrical Engineering,3.36,seeking,Group-C,international,cloud-computing|cybersecurity|data-analytics|software-engineering,lecture,3.9
+STU-0074,2025F,MAC-AI,Computer Science,2.99,placed,Group-C,international,cloud-computing|data-analytics,lecture,7.5
+STU-0075,2024F,MAC-General,Mathematics,3.36,not-applicable,Group-D,domestic,cybersecurity|entrepreneurship,project-based,6.1
+STU-0076,2024F,MAC-General,Data Science,2.78,not-applicable,Group-A,international,cybersecurity|data-analytics|entrepreneurship|software-engineering,lecture,6.9
+STU-0077,2025F,MAC-General,Computer Science,3.16,seeking,Group-A,international,entrepreneurship|human-centered-design,lecture,3.3
+STU-0078,2025F,MAC-AI,Computer Science,3.27,not-applicable,Group-A,international,entrepreneurship|software-engineering,self-paced,1.9
+STU-0079,2025F,MAC-General,Data Science,3.26,seeking,Group-A,international,cybersecurity|entrepreneurship|project-management|software-engineering,lecture,3.8
+STU-0080,2025F,MAC-General,Computer Science,3.53,placed,Group-B,international,cloud-computing|entrepreneurship|human-centered-design|project-management,self-paced,5.6
+STU-0081,2024F,MAC-General,Computer Science,3.37,placed,Group-D,international,cloud-computing|cybersecurity|machine-learning|project-management,lecture,3.4
+STU-0082,2025W,MAC-General,Information Technology,3.50,placed,Group-A,international,human-centered-design|machine-learning|project-management|software-engineering,self-paced,4.6
+STU-0083,2024F,MAC-General,Mathematics,3.16,seeking,Group-D,international,cybersecurity|human-centered-design|project-management,project-based,5.4
+STU-0084,2025W,MAC-AI,Mathematics,3.06,placed,Group-C,international,data-analytics|human-centered-design|machine-learning,project-based,5.2
+STU-0085,2024F,MAC-General,Mathematics,3.13,placed,Group-C,domestic,entrepreneurship|machine-learning,project-based,4.9
+STU-0086,2025F,MAC-General,Data Science,3.15,not-applicable,Group-D,international,cloud-computing|project-management,lecture,1.0
+STU-0087,2025W,MAC-General,Data Science,3.10,placed,Group-D,international,cloud-computing|cybersecurity|entrepreneurship|software-engineering,self-paced,7.9
+STU-0088,2024F,MAC-AI,Computer Science,3.18,seeking,Group-B,international,data-analytics|entrepreneurship,lecture,2.8
+STU-0089,2024F,MAC-General,Electrical Engineering,3.09,placed,Group-C,international,cloud-computing|entrepreneurship|project-management,lecture,6.1
+STU-0090,2025W,MAC-General,Mathematics,3.33,placed,Group-B,international,entrepreneurship|machine-learning|project-management,lecture,3.6
+STU-0091,2024F,MAC-General,Computer Science,3.09,not-applicable,Group-A,international,cloud-computing|cybersecurity|machine-learning|software-engineering,lecture,5.4
+STU-0092,2025F,MAC-General,Software Engineering,3.30,placed,Group-C,international,cybersecurity|human-centered-design|machine-learning|software-engineering,self-paced,7.0
+STU-0093,2024F,MAC-AI,Mathematics,3.22,not-applicable,Group-C,domestic,cloud-computing|cybersecurity|entrepreneurship|human-centered-design,project-based,7.6
+STU-0094,2025W,MAC-AI,Information Technology,3.42,placed,Group-D,international,cloud-computing|entrepreneurship|machine-learning|project-management,lecture,7.9
+STU-0095,2025F,MAC-General,Data Science,2.98,seeking,Group-D,international,cloud-computing|cybersecurity|project-management|software-engineering,self-paced,6.5
+STU-0096,2024F,MAC-General,Mathematics,3.16,placed,Group-C,international,cloud-computing|cybersecurity|data-analytics|human-centered-design,lecture,0.4
+STU-0097,2024F,MAC-General,Data Science,2.97,not-applicable,Group-B,international,cloud-computing|data-analytics|human-centered-design|machine-learning,self-paced,4.6
+STU-0098,2025W,MAC-General,Information Technology,3.30,seeking,Group-D,domestic,cybersecurity|data-analytics|human-centered-design|project-management,lecture,7.2
+STU-0099,2025W,MAC-General,Mathematics,3.11,seeking,Group-A,international,cybersecurity|human-centered-design|machine-learning,self-paced,4.0
+STU-0100,2025W,MAC-AI,Data Science,3.22,not-applicable,Group-C,domestic,cloud-computing|cybersecurity|project-management,self-paced,1.2
+STU-0101,2024F,MAC-General,Software Engineering,2.98,not-applicable,Group-A,domestic,human-centered-design|machine-learning|project-management|software-engineering,self-paced,5.7
+STU-0102,2025W,MAC-General,Electrical Engineering,3.19,seeking,Group-C,domestic,cloud-computing|entrepreneurship|software-engineering,self-paced,6.5
+STU-0103,2024F,MAC-AI,Computer Science,3.06,placed,Group-A,international,cloud-computing|human-centered-design|software-engineering,lecture,0.8
+STU-0104,2025F,MAC-General,Computer Science,3.20,not-applicable,Group-B,international,entrepreneurship|human-centered-design|project-management,self-paced,3.5
+STU-0105,2024F,MAC-AI,Electrical Engineering,2.81,seeking,Group-B,domestic,human-centered-design|machine-learning|project-management,lecture,6.6
+STU-0106,2025F,MAC-General,Mathematics,3.23,not-applicable,Group-A,international,data-analytics|human-centered-design|software-engineering,lecture,6.8
+STU-0107,2025W,MAC-General,Data Science,3.63,placed,Group-B,international,cloud-computing|data-analytics|machine-learning,self-paced,7.0
+STU-0108,2025W,MAC-General,Software Engineering,3.37,placed,Group-D,international,cloud-computing|entrepreneurship|machine-learning,lecture,7.9
+STU-0109,2025W,MAC-AI,Data Science,3.24,seeking,Group-D,international,cloud-computing|data-analytics|software-engineering,lecture,3.1
+STU-0110,2025W,MAC-General,Mathematics,2.94,placed,Group-D,international,cloud-computing|entrepreneurship|human-centered-design|machine-learning,lecture,4.8
+STU-0111,2025F,MAC-General,Mathematics,3.30,not-applicable,Group-C,international,cybersecurity|machine-learning|software-engineering,project-based,1.8
+STU-0112,2024F,MAC-General,Data Science,3.50,seeking,Group-C,international,data-analytics|software-engineering,project-based,3.5
+STU-0113,2024F,MAC-AI,Mathematics,3.07,not-applicable,Group-A,domestic,data-analytics|entrepreneurship|human-centered-design|software-engineering,project-based,1.1
+STU-0114,2025F,MAC-General,Electrical Engineering,3.23,seeking,Group-D,international,cloud-computing|project-management,project-based,1.0
+STU-0115,2025F,MAC-AI,Electrical Engineering,3.08,not-applicable,Group-D,domestic,data-analytics|human-centered-design|machine-learning,self-paced,2.5
+STU-0116,2025W,MAC-AI,Electrical Engineering,3.31,placed,Group-B,international,human-centered-design|machine-learning,lecture,6.7
+STU-0117,2025F,MAC-General,Electrical Engineering,3.23,not-applicable,Group-C,international,entrepreneurship|project-management|software-engineering,project-based,4.6
+STU-0118,2025F,MAC-General,Software Engineering,3.27,not-applicable,Group-A,international,cybersecurity|entrepreneurship|human-centered-design|software-engineering,project-based,4.8
+STU-0119,2025F,MAC-AI,Software Engineering,3.27,placed,Group-B,international,entrepreneurship|machine-learning|project-management|software-engineering,self-paced,2.9
+STU-0120,2024F,MAC-General,Electrical Engineering,3.16,placed,Group-B,international,cloud-computing|cybersecurity|data-analytics,self-paced,0.5
