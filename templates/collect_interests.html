@@ -1,29 +1,284 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <style>
+    .interest-hero {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .interest-hero h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    [data-theme="dark"] .interest-hero h2 {
+      background: linear-gradient(135deg, #fff 0%, var(--primary-light) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    [data-theme="light"] .interest-hero h2 {
+      background: linear-gradient(135deg, #1e293b 0%, var(--primary) 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+      margin-bottom: var(--space-lg);
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    .status-badge strong {
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: var(--space-lg) 0;
+    }
+
+    legend {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+      text-align: center;
+      width: 100%;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .interest-option {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: var(--space-md);
+      border: 2px solid var(--glass-border);
+      transition: all var(--transition-base);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+    }
+
+    .interest-option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .interest-option:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+      border-color: var(--primary);
+    }
+
+    .interest-option:hover::before {
+      opacity: 0.1;
+    }
+
+    .interest-option.selected {
+      background: rgba(102, 126, 234, 0.15);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2),
+                  0 8px 24px rgba(102, 126, 234, 0.3);
+      transform: scale(1.03);
+    }
+
+    .interest-option.selected::before {
+      opacity: 0.15;
+    }
+
+    .interest-option input[type="checkbox"] {
+      position: relative;
+      margin: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .interest-option span {
+      flex: 1;
+      font-weight: 500;
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+      position: relative;
+      z-index: 1;
+      transition: color var(--transition-fast);
+    }
+
+    .interest-option.selected span {
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .interest-option:active {
+      transform: scale(0.98);
+    }
+
+    .form-actions {
+      margin-top: var(--space-xl);
+      text-align: center;
+    }
+
+    .form-actions button {
+      min-width: 280px;
+      padding: 1.25rem 2.5rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+    }
+
+    .form-actions button:hover {
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5), var(--shadow-glow);
+    }
+
+    .preset-info {
+      text-align: center;
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      background: rgba(67, 227, 123, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(67, 227, 123, 0.3);
+      color: var(--success);
+    }
+
+    .selection-counter {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      z-index: 1000;
+      animation: slideInRight 0.4s ease-out;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .counter-number {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.5rem;
+      border-radius: 8px;
+      margin: 0 0.25rem;
+      font-weight: 700;
+    }
+
+    /* Light Mode Adjustments */
+    [data-theme="light"] .interest-option {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(102, 126, 234, 0.2);
+    }
+
+    [data-theme="light"] .interest-option.selected {
+      background: rgba(102, 126, 234, 0.1);
+      border-color: var(--primary);
+    }
+
+    [data-theme="light"] .preset-info {
+      background: rgba(67, 227, 123, 0.15);
+      border-color: rgba(67, 227, 123, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .interest-hero h2 {
+        font-size: 1.875rem;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+
+      .form-actions button {
+        min-width: 100%;
+      }
+
+      .selection-counter {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+
   <section class="card">
-    <h2>Let's capture your interests</h2>
-    {% if missing_student %}
-      <p class="error">
-        We did not find <strong>{{ student_id }}</strong> in the existing roster. No worries — share your focus areas and we will tailor courses anyway.
-      </p>
-    {% elif missing_history %}
-      <p class="subtle">
-        We found {{ student.student_id }} ({{ student.undergrad_major }} major), but no completed courses yet.
-        Tell us what you want to explore so we can build a cold-start pathway.
-      </p>
-    {% else %}
-      <p class="subtle">
-        Refresh your preferences to refine future suggestions.
-      </p>
-    {% endif %}
-    <form method="post" action="/interests">
+    <div class="interest-hero">
+      <h2>Let's Capture Your Interests</h2>
+      
+      {% if missing_student %}
+        <div class="error">
+          We couldn't find <strong>{{ student_id }}</strong> in our roster. No worries — share your focus areas and we'll tailor courses for you anyway.
+        </div>
+      {% elif missing_history %}
+        <div class="status-badge">
+          📚 Found <strong>{{ student.student_id }}</strong> ({{ student.undergrad_major }} major) — Tell us what you want to explore to build your personalized pathway.
+        </div>
+      {% else %}
+        <p class="subtle" style="font-size: 1.0625rem;">
+          Refresh your preferences to refine future suggestions and discover new opportunities.
+        </p>
+      {% endif %}
+    </div>
+
+    <form method="post" action="/interests" id="interestForm">
       <input type="hidden" name="student_id" value="{{ student_id }}">
-      <fieldset style="border:none; padding:0; margin:1rem 0;">
-        <legend class="subtle">Pick at least three areas that resonate with you.</legend>
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:0.5rem;">
+      
+      <fieldset>
+        <legend>Pick at least three areas that resonate with your goals</legend>
+        
+        <div class="interest-grid">
           {% for interest in interest_catalog %}
-            <label class="card" style="display:flex; align-items:center; gap:0.5rem; margin:0;">
+            <label class="interest-option" data-interest="{{ interest }}">
               <input type="checkbox"
                      name="interests"
                      value="{{ interest }}"
@@ -33,16 +288,110 @@
           {% endfor %}
         </div>
       </fieldset>
-      <div class="actions">
-        <button type="submit">Build Recommendations</button>
+
+      <div class="form-actions">
+        <button type="submit" id="submitBtn">🚀 Build My Recommendations</button>
       </div>
     </form>
+
     {% if preset_interests %}
-      <p class="subtle">
-        Preselected based on your profile: {{ preset_interests | join(", ") }}.
-      </p>
+      <div class="preset-info">
+        ✨ Preselected based on your profile: <strong>{{ preset_interests | join(", ") }}</strong>
+      </div>
     {% endif %}
   </section>
+
+  <div class="selection-counter" id="selectionCounter" style="display: none;">
+    Selected: <span class="counter-number" id="counterNumber">0</span> interests
+  </div>
+
+  <script>
+    // Enhanced interaction script
+    const form = document.getElementById('interestForm');
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+    const labels = form.querySelectorAll('.interest-option');
+    const counter = document.getElementById('selectionCounter');
+    const counterNumber = document.getElementById('counterNumber');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function updateSelection() {
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      counterNumber.textContent = checkedCount;
+      
+      if (checkedCount > 0) {
+        counter.style.display = 'block';
+      } else {
+        counter.style.display = 'none';
+      }
+
+      // Update submit button state
+      if (checkedCount >= 3) {
+        submitBtn.style.opacity = '1';
+        submitBtn.style.pointerEvents = 'auto';
+      } else {
+        submitBtn.style.opacity = '0.6';
+        submitBtn.style.pointerEvents = 'none';
+      }
+    }
+
+    labels.forEach((label, index) => {
+      const checkbox = label.querySelector('input[type="checkbox"]');
+      
+      // Stagger animation on load
+      setTimeout(() => {
+        label.style.animation = 'fadeInUp 0.4s ease-out forwards';
+      }, index * 30);
+
+      // Make entire label clickable
+      label.addEventListener('click', function(e) {
+        // Prevent double-toggle if clicking directly on checkbox
+        e.preventDefault();
+        
+        // Toggle the checkbox
+        checkbox.checked = !checkbox.checked;
+        
+        // Update visual state
+        if (checkbox.checked) {
+          label.classList.add('selected');
+        } else {
+          label.classList.remove('selected');
+        }
+        
+        updateSelection();
+      });
+
+      // Initialize selected state
+      if (checkbox.checked) {
+        label.classList.add('selected');
+      }
+    });
+
+    // Initialize
+    updateSelection();
+
+    // Form validation
+    form.addEventListener('submit', function(e) {
+      const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      if (checkedCount < 3) {
+        e.preventDefault();
+        alert('Please select at least 3 interests to continue.');
+      }
+    });
+
+    // Add animation keyframes dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 {% endblock %}
-
-

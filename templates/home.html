@@ -1,31 +1,315 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <section class="card">
-    <h2>Start with your MAC student ID</h2>
-    <p class="subtle">
-      Enter your synthetic student number (e.g., <code>STU-0007</code>). We will look up your academic history and
-      craft a personalised course path. New students can jump in by sharing interests after this step.
-    </p>
-    {% if error %}
-      <div class="error">{{ error }}</div>
-    {% endif %}
-    <form method="post" class="card">
-      <label for="student_id" class="subtle">Student ID</label>
-      <input type="text" id="student_id" name="student_id" placeholder="STU-00XX" autocomplete="off">
-      <div class="actions">
-        <button type="submit">Find My Path</button>
+  <style>
+    .hero-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 28px;
+      padding: var(--space-xl);
+      margin-bottom: var(--space-lg);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: var(--space-sm);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    [data-theme="dark"] .hero-title {
+      background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    [data-theme="light"] .hero-title {
+      background: linear-gradient(135deg, #1e293b 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+    }
+
+    .input-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: var(--space-xl);
+      border: 1px solid var(--glass-border);
+      margin-top: var(--space-lg);
+      transition: all var(--transition-base);
+    }
+
+    .input-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: var(--space-md);
+    }
+
+    .input-wrapper input {
+      padding-left: 3.5rem;
+      font-size: 1.125rem;
+      height: 60px;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .feature-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      border: 1px solid var(--glass-border);
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .feature-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .feature-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: var(--space-sm);
+      display: block;
+      filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.5));
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+      color: var(--text-primary);
+    }
+
+    .feature-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+      text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+    }
+
+    /* Outline Button Style */
+    .btn-outline {
+      background: transparent !important;
+      border: 2px solid var(--primary) !important;
+      box-shadow: none !important;
+      color: var(--primary) !important;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+    }
+
+    [data-theme="light"] .btn-outline {
+      border-color: var(--primary) !important;
+      color: var(--primary) !important;
+      font-weight: 600;
+    }
+
+    [data-theme="light"] .btn-outline:hover {
+      background: var(--primary) !important;
+      color: #ffffff !important;
+    }
+
+    /* Light Mode Adjustments */
+    [data-theme="light"] .hero-card::before {
+      opacity: 0.5;
+    }
+
+    [data-theme="light"] .feature-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+
+    [data-theme="light"] .input-card {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.75rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .input-card {
+        padding: var(--space-lg);
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <section class="hero-card">
+    <div class="hero-content">
+      <h2 class="hero-title">Discover Your Perfect Course Path</h2>
+      <p class="hero-description">
+        Enter your MAC student ID and let our intelligent hybrid recommender analyze your academic journey. 
+        Get personalized course suggestions powered by <span class="highlight">AI-driven insights</span> and collaborative filtering.
+      </p>
+      
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+
+      <form method="post" class="input-card">
+        <div class="input-wrapper">
+          <span class="input-icon">🎓</span>
+          <input 
+            type="text" 
+            id="student_id" 
+            name="student_id" 
+            placeholder="Enter your Student ID (e.g., STU-0007)" 
+            autocomplete="off"
+            required>
+        </div>
+        <div class="actions">
+          <button type="submit">✨ Discover My Path</button>
+        </div>
+      </form>
+      
+      <div style="text-align: center; margin-top: var(--space-md);">
+        <p class="subtle">Or browse the entire course catalog →</p>
+        <form method="get" action="/browse" style="display: inline;">
+          <button type="submit" class="btn-outline" style="margin-top: var(--space-xs);">
+            🔍 Browse All Courses
+          </button>
+        </form>
       </div>
-    </form>
+    </div>
   </section>
-  <section class="card">
-    <h3>What happens next?</h3>
-    <ul>
-      <li>Students with prior MAC course work receive a hybrid recommendation that blends their history with lookalike peers.</li>
-      <li>New or cold-start students curate interests so that we can match them with relevant skill builders.</li>
-      <li>Every suggestion lists the top skills and peer uptake to keep the rationale transparent.</li>
-    </ul>
+
+  <section class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-content">
+        <span class="feature-icon">🎯</span>
+        <h3 class="feature-title">Personalized Recommendations</h3>
+        <p class="feature-description">
+          Students with coursework history receive hybrid recommendations that blend your achievements with insights from similar academic trajectories.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-content">
+        <span class="feature-icon">🚀</span>
+        <h3 class="feature-title">Cold-Start Intelligence</h3>
+        <p class="feature-description">
+          New students can curate their interests to receive tailored course matches that align with their goals and learning preferences.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-content">
+        <span class="feature-icon">📊</span>
+        <h3 class="feature-title">Transparent Rationale</h3>
+        <p class="feature-description">
+          Every suggestion includes skill breakdowns, peer uptake metrics, and hybrid scoring to help you make informed decisions.
+        </p>
+      </div>
+    </div>
   </section>
 {% endblock %}
-
-
