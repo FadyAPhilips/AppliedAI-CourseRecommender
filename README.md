@@ -37,4 +37,6 @@ Need the deep dive? Check `docs/TECHNICAL_OVERVIEW.md` for architecture, algorit
 - To calculate precision, recall, or other evaluation metrics, make sure the data loader uses the training enrollments file. By default, it may use enrolments.csv
 - Change the file name in the `data_loader.py` like `enrollments_rows = _read_csv("train_enrollments.csv")`
 - This ensures that the evaluation uses the correct training dataset when computing recommendation metrics.
+- Run the Metrics Script with `python metrics.py`
+
 
