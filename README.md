@@ -1,6 +1,6 @@
 # MAC Course Pathfinder
 
-A tiny web app that suggests University of Windsor MAC courses using a hybrid (content + collaborative) recommender. Enter a synthetic student ID to see recommendations driven by past coursework, or pick interests to handle brand-new students.
+A tiny web app that suggests University of Windsor MAC courses using a hybrid (content + collaborative) recommender. Enter a synthetic student ID to see recommendations driven by past coursework, or pick interests to handle brand-new students.
 
 ## Quick Start
 
@@ -8,12 +8,34 @@ A tiny web app that suggests University of Windsor MAC courses using a hybrid (c
    ```bash
    pip install -r requirements.txt
    ```
-2. **Run the app**
+2. **Run the app locally**
    ```bash
-   python app.py
+   python main.py
    ```
 3. **Visit the UI** – open http://127.0.0.1:5000/ in your browser.
 4. **Test it out** – try IDs like `STU-0001`, `STU-0007`, or `STU-0036`. If we cannot find history, you will be prompted to select interests.
+
+## Deployment
+
+### Railway
+This app is configured for Railway deployment:
+- `Procfile` specifies the gunicorn command
+- Railway automatically detects Python and installs dependencies
+- Just connect your GitHub repo and deploy!
+
+**Steps:**
+1. Connect your GitHub repository to Railway
+2. Railway will auto-detect Python and use the `Procfile`
+3. Your app will be live at `your-app.railway.app`
+
+### Local Development
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python main.py
+```
 
 ## What You Get
 
@@ -23,13 +45,12 @@ A tiny web app that suggests University of Windsor MAC courses using a hybrid (c
 
 ## Project Layout
 
-- `app.py` – Flask entry point and routes.
+- `main.py` – Flask entry point and routes.
 - `app/` – data ingestion and recommendation logic.
 - `templates/` – HTML templates for the UI.
 - `data/synthetic/` – ready-to-use CSV dataset (no setup required).
 - `docs/` – extra background, including the full data schema and technical notes.
 - `scripts/generate_mac_synthetic_data.py` – optional script if you want to rebuild the synthetic dataset.
+- `Procfile` – Railway deployment configuration.
 
 Need the deep dive? Check `docs/TECHNICAL_OVERVIEW.md` for architecture, algorithms, and extension ideas.
-
-
